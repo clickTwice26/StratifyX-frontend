@@ -1,4 +1,12 @@
-export const features = [
+export interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  label: string;
+  size: "sm" | "md" | "lg" | "tall" | "wide";
+}
+
+export const features: Feature[] = [
   {
     id: "multi-asset",
     title: "Multi-Asset Engine",

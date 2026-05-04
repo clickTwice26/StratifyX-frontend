@@ -19,13 +19,13 @@ export default function Pricing() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="text-center mb-12"
         >
-          <span className="inline-block text-[11px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
+          <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Pricing
           </span>
           <h2 className="text-h2 text-sx-text mb-3">
             Simple, transparent pricing
           </h2>
-          <p className="text-[15px] text-sx-text-muted max-w-[400px] mx-auto mb-8">
+          <p className="text-[16px] text-sx-text-muted max-w-[400px] mx-auto mb-8">
             Start free, scale when ready.
           </p>
 
@@ -33,7 +33,8 @@ export default function Pricing() {
           <div className="inline-flex items-center gap-0.5 rounded-full border border-sx-border p-0.5">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-4 py-1.5 rounded-full text-[13px] font-medium transition-colors duration-200 ${
+              aria-pressed={!annual}
+              className={`px-4 py-1.5 rounded-full text-[14px] font-medium transition-colors duration-200 ${
                 !annual ? "bg-white text-[#0A0A0A]" : "text-sx-text-muted hover:text-sx-text"
               }`}
             >
@@ -41,7 +42,8 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`px-4 py-1.5 rounded-full text-[13px] font-medium transition-colors duration-200 ${
+              aria-pressed={annual}
+              className={`px-4 py-1.5 rounded-full text-[14px] font-medium transition-colors duration-200 ${
                 annual ? "bg-white text-[#0A0A0A]" : "text-sx-text-muted hover:text-sx-text"
               }`}
             >
@@ -66,13 +68,13 @@ export default function Pricing() {
             >
               {tier.badge && (
                 <div className="absolute top-4 right-5">
-                  <span className="text-[10px] font-mono text-sx-accent uppercase tracking-wider">
+                  <span className="text-[11px] font-mono text-sx-accent uppercase tracking-wider">
                     {tier.badge}
                   </span>
                 </div>
               )}
 
-              <h3 className="text-[18px] font-semibold text-sx-text mb-1 tracking-extra-tight">
+              <h3 className="text-[19px] font-semibold text-sx-text mb-1 tracking-extra-tight">
                 {tier.name}
               </h3>
 
@@ -86,25 +88,25 @@ export default function Pricing() {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -6, opacity: 0 }}
                         transition={{ duration: 0.15 }}
-                        className="text-[36px] font-semibold text-sx-text tracking-extra-tight"
+                        className="text-[40px] font-semibold text-sx-text tracking-extra-tight"
                       >
                         ${annual ? tier.price.annual : tier.price.monthly}
                       </motion.span>
                     </AnimatePresence>
-                    <span className="text-[13px] text-sx-text-muted">/mo</span>
+                    <span className="text-[14px] text-sx-text-muted">/mo</span>
                   </div>
                 ) : (
-                  <div className="text-[36px] font-semibold text-sx-text tracking-extra-tight">
+                  <div className="text-[40px] font-semibold text-sx-text tracking-extra-tight">
                     Custom
                   </div>
                 )}
               </div>
 
-              <p className="text-[13px] text-sx-text-muted mb-5">{tier.description}</p>
+              <p className="text-[14px] text-sx-text-muted mb-5">{tier.description}</p>
 
               <ul className="space-y-2.5 mb-7 flex-1">
                 {tier.features.map((f) => (
-                  <li key={f.text} className="flex items-start gap-2 text-[13px]">
+                  <li key={f.text} className="flex items-start gap-2 text-[14px]">
                     {f.included ? (
                       <Check className="h-3.5 w-3.5 text-sx-accent mt-0.5 flex-shrink-0" />
                     ) : (
@@ -118,7 +120,7 @@ export default function Pricing() {
               </ul>
 
               <button
-                className={`w-full h-10 rounded-full text-[13px] font-medium tracking-extra-tight transition-colors duration-200 ${
+                className={`w-full h-11 rounded-full text-[14px] font-medium tracking-extra-tight transition-colors duration-200 ${
                   tier.highlighted
                     ? "bg-white text-[#0A0A0A] hover:bg-[#E0E0E0]"
                     : "border border-sx-border-light text-sx-text hover:border-sx-text-muted"
@@ -130,7 +132,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center text-[12px] text-sx-text-dim mt-6 font-mono">
+        <p className="text-center text-[13px] text-sx-text-dim mt-6 font-mono">
           14-day free trial · No credit card required · Cancel anytime
         </p>
       </div>

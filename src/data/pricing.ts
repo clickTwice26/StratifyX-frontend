@@ -1,4 +1,22 @@
-export const pricingTiers = [
+export interface PricingFeature {
+  text: string;
+  included: boolean;
+}
+
+export interface PricingTier {
+  name: string;
+  price: {
+    monthly: number | null;
+    annual: number | null;
+  };
+  description: string;
+  badge: string | null;
+  features: PricingFeature[];
+  cta: string;
+  highlighted: boolean;
+}
+
+export const pricingTiers: PricingTier[] = [
   {
     name: "Free",
     price: { monthly: 0, annual: 0 },

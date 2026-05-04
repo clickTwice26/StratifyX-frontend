@@ -7,12 +7,25 @@ export default function CustomCursor() {
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
+    // Skip on touch devices
+    if ("ontouchstart" in window) return;
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 
+    let rafId: number;
+    let mouseX = 0;
+    let mouseY = 0;
+
     const move = (e: MouseEvent) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    const update = () => {
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+      rafId = requestAnimationFrame(update);
     };
 
     const handleOver = (e: MouseEvent) => {
@@ -26,12 +39,14 @@ export default function CustomCursor() {
       setHovering(!!isInteractive);
     };
 
-    document.addEventListener("mousemove", move);
+    document.addEventListener("mousemove", move, { passive: true });
     document.addEventListener("mouseover", handleOver);
+    rafId = requestAnimationFrame(update);
 
     return () => {
       document.removeEventListener("mousemove", move);
       document.removeEventListener("mouseover", handleOver);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 

@@ -23,7 +23,7 @@ function FAQItem({
         className="flex w-full items-center justify-between py-4 text-left group"
         aria-expanded={isOpen}
       >
-        <span className="text-[15px] font-medium text-sx-text group-hover:text-sx-accent transition-colors duration-200 pr-4 tracking-snug">
+        <span className="text-[16px] font-medium text-sx-text group-hover:text-sx-accent transition-colors duration-200 pr-4 tracking-snug">
           {question}
         </span>
         <motion.div
@@ -43,7 +43,7 @@ function FAQItem({
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-4 text-[14px] text-sx-text-muted leading-relaxed max-w-[600px]">
+            <p className="pb-4 text-[15px] text-sx-text-muted leading-relaxed max-w-[600px]">
               {answer}
             </p>
           </motion.div>
@@ -66,7 +66,7 @@ export default function FAQ() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="mb-10"
         >
-          <span className="inline-block text-[11px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
+          <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             FAQ
           </span>
           <h2 className="text-h2 text-sx-text">

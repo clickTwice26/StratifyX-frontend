@@ -1,4 +1,12 @@
-export const testimonials = [
+export interface Testimonial {
+  quote: string;
+  name: string;
+  title: string;
+  initials: string;
+  rating: number;
+}
+
+export const testimonials: Testimonial[] = [
   {
     quote:
       "StratifyX completely changed how I develop strategies. I went from guessing to having statistical confidence in every trade I take.",
@@ -49,7 +57,7 @@ export const testimonials = [
   },
 ];
 
-export const brokerLogos = [
+export const brokerLogos: string[] = [
   "Binance",
   "CME Group",
   "OANDA",

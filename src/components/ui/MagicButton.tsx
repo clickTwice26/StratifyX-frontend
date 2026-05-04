@@ -17,7 +17,7 @@ export default function MagicButton({
   ...props
 }: MagicButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full text-[14px] font-medium tracking-extra-tight transition-colors duration-200 active:scale-[0.98] h-11 px-7";
+    "inline-flex items-center justify-center gap-2 rounded-full text-[15px] font-medium tracking-extra-tight transition-colors duration-200 active:scale-[0.98] h-12 px-7";
 
   const variants = {
     primary:

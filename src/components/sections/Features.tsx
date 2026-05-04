@@ -25,13 +25,13 @@ export default function Features() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="mb-14"
         >
-          <span className="inline-block text-[11px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
+          <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Features
           </span>
           <h2 className="text-h2 text-sx-text mb-3">
             Everything you need to test smarter
           </h2>
-          <p className="text-[15px] text-sx-text-muted max-w-[480px]">
+          <p className="text-[16px] text-sx-text-muted max-w-[480px]">
             From data ingestion to performance analytics — a complete backtesting toolkit.
           </p>
         </motion.div>
@@ -53,14 +53,14 @@ export default function Features() {
                 <div className="flex h-7 w-7 items-center justify-center rounded-md bg-sx-surface text-sx-text-muted group-hover:text-sx-accent transition-colors duration-200">
                   {iconMap[feature.id]}
                 </div>
-                <span className="text-[11px] font-mono text-sx-text-dim uppercase tracking-wider">
+                <span className="text-[12px] font-mono text-sx-text-dim uppercase tracking-wider">
                   {feature.label}
                 </span>
               </div>
-              <h3 className="text-[16px] font-semibold text-sx-text mb-1.5 tracking-extra-tight">
+              <h3 className="text-[17px] font-semibold text-sx-text mb-1.5 tracking-extra-tight">
                 {feature.title}
               </h3>
-              <p className="text-[13px] text-sx-text-muted leading-relaxed">
+              <p className="text-[14px] text-sx-text-muted leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

@@ -42,7 +42,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="mb-14"
         >
-          <span className="inline-block text-[11px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
+          <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             How It Works
           </span>
           <h2 className="text-h2 text-sx-text">
@@ -62,7 +62,7 @@ export default function HowItWorks() {
               className="relative bg-sx-bg p-7 group hover:bg-sx-surface transition-colors duration-200"
             >
               {/* Ghost number */}
-              <div className="absolute top-4 right-5 font-mono text-[56px] font-bold text-sx-border leading-none select-none">
+              <div className="absolute top-4 right-5 font-mono text-[62px] font-bold text-sx-border leading-none select-none">
                 {step.num}
               </div>
 
@@ -70,10 +70,10 @@ export default function HowItWorks() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sx-surface text-sx-text-muted mb-5 group-hover:text-sx-accent transition-colors duration-200">
                   {step.icon}
                 </div>
-                <h3 className="text-[15px] font-semibold text-sx-text mb-1.5 tracking-extra-tight">
+                <h3 className="text-[16px] font-semibold text-sx-text mb-1.5 tracking-extra-tight">
                   {step.title}
                 </h3>
-                <p className="text-[13px] text-sx-text-muted leading-relaxed">
+                <p className="text-[14px] text-sx-text-muted leading-relaxed">
                   {step.description}
                 </p>
               </div>

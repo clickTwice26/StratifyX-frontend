@@ -15,7 +15,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           className="mb-14"
         >
-          <span className="inline-block text-[11px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
+          <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Testimonials
           </span>
           <h2 className="text-h2 text-sx-text">
@@ -43,17 +43,17 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-[13px] text-sx-text-secondary leading-relaxed mb-5">
+              <p className="text-[14px] text-sx-text-secondary leading-relaxed mb-5">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sx-surface border border-sx-border text-[11px] font-mono text-sx-text-muted">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sx-surface border border-sx-border text-[12px] font-mono text-sx-text-muted">
                   {t.initials}
                 </div>
                 <div>
-                  <div className="text-[13px] font-medium text-sx-text">{t.name}</div>
-                  <div className="text-[11px] text-sx-text-dim">{t.title}</div>
+                  <div className="text-[14px] font-medium text-sx-text">{t.name}</div>
+                  <div className="text-[12px] text-sx-text-dim">{t.title}</div>
                 </div>
               </div>
             </motion.div>

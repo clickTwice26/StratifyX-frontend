@@ -9,12 +9,22 @@ export default function NoiseOverlay() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Skip if user prefers reduced motion
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (motionQuery.matches) return;
+
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let frame = 0;
     let animationId: number;
+    let isTabVisible = true;
     const canvasSize = 256;
+
+    const handleVisibility = () => {
+      isTabVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
     const resize = () => {
       canvas.width = canvasSize;
@@ -37,7 +47,7 @@ export default function NoiseOverlay() {
     };
 
     const loop = () => {
-      if (frame % 3 === 0) {
+      if (isTabVisible && frame % 3 === 0) {
         drawGrain();
       }
       frame++;
@@ -49,6 +59,7 @@ export default function NoiseOverlay() {
 
     return () => {
       cancelAnimationFrame(animationId);
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
   }, []);
 

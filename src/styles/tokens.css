@@ -23,8 +23,8 @@
   /* ─── Text — warm grays, not blue-tinted ─── */
   --sx-text:          #EDEDEF;
   --sx-text-secondary:#94949E;
-  --sx-text-muted:    #63636E;
-  --sx-text-dim:      #44444E;
+  --sx-text-muted:    #8E8E99;
+  --sx-text-dim:      #7A7A85;
 
   /* ─── Typography ─── */
   --font-heading:     'Inter', -apple-system, system-ui, sans-serif;

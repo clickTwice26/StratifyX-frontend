@@ -1,4 +1,9 @@
-export const faqItems = [
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export const faqItems: FaqItem[] = [
   {
     question: "What is backtesting and why does it matter?",
     answer:

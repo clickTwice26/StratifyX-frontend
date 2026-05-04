@@ -28,7 +28,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="text-[15px] text-sx-text-muted mb-8"
+          className="text-[16px] text-sx-text-muted mb-8"
         >
           Join thousands of traders who test smarter.
         </motion.p>
@@ -41,7 +41,7 @@ export default function FinalCTA() {
         >
           <a
             href="#start"
-            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-white text-[#0A0A0A] text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
+            className="inline-flex items-center gap-2 h-12 px-8 rounded-full bg-white text-[#0A0A0A] text-[16px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
           >
             Create Free Account
             <ArrowRight className="h-4 w-4" />
@@ -53,7 +53,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="flex items-center justify-center gap-5 mt-8 text-[11px] text-sx-text-dim font-mono"
+          className="flex items-center justify-center gap-5 mt-8 text-[12px] text-sx-text-dim font-mono"
         >
           {badges.map((b) => (
             <div key={b.label} className="flex items-center gap-1.5">

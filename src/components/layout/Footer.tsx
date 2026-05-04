@@ -56,11 +56,11 @@ export default function Footer() {
           <div className="col-span-2">
             <a href="/" className="flex items-center gap-2 mb-4">
               <BarChart3 className="h-5 w-5 text-sx-accent" />
-              <span className="text-[15px] font-semibold tracking-extra-tight">
+              <span className="text-[16px] font-semibold tracking-extra-tight">
                 StratifyX
               </span>
             </a>
-            <p className="text-[13px] text-sx-text-muted leading-relaxed max-w-[260px] mb-5">
+            <p className="text-[14px] text-sx-text-muted leading-relaxed max-w-[260px] mb-5">
               Institutional-grade backtesting for Forex, Crypto &amp; Futures.
             </p>
             <div className="flex items-center gap-2">
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Link columns */}
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-[12px] font-medium text-sx-text-muted uppercase tracking-wider mb-3">
+              <h4 className="text-[13px] font-medium text-sx-text-muted uppercase tracking-wider mb-3">
                 {col.title}
               </h4>
               <ul className="space-y-2.5">
@@ -90,7 +90,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-[13px] text-sx-text-dim hover:text-sx-text transition-colors duration-200"
+                      className="text-[14px] text-sx-text-dim hover:text-sx-text transition-colors duration-200"
                     >
                       {link}
                     </a>
@@ -103,10 +103,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-14 pt-6 border-t border-sx-border flex items-center justify-between">
-          <p className="text-[11px] text-sx-text-dim font-mono">
+          <p className="text-[12px] text-sx-text-dim font-mono">
             &copy; {new Date().getFullYear()} StratifyX
           </p>
-          <p className="text-[11px] text-sx-text-dim">
+          <p className="text-[12px] text-sx-text-dim">
             Built for serious traders.
           </p>
         </div>

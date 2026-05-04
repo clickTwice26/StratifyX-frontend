@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ShadowOverlay from "@/components/ui/ShadowOverlay";
 import MarqueeTicker from "@/components/ui/MarqueeTicker";
 import { logoMap } from "@/components/ui/BrokerLogos";
+import { brokerLogos } from "@/data/testimonials";
 
 const trustStats = [
   "4,200+ traders",
@@ -12,21 +13,8 @@ const trustStats = [
   "99.97% uptime",
 ];
 
-const brokerNames = [
-  "Binance",
-  "CME Group",
-  "OANDA",
-  "Bybit",
-  "Interactive Brokers",
-  "Coinbase",
-  "Kraken",
-  "FXCM",
-  "Deribit",
-  "TD Ameritrade",
-];
-
 export default function Hero() {
-  const marqueeItems = brokerNames.map((name) => {
+  const marqueeItems = brokerLogos.map((name) => {
     const LogoComponent = logoMap[name];
     return (
       <div
@@ -36,7 +24,7 @@ export default function Hero() {
         <div className="text-sx-text-dim opacity-50">
           {LogoComponent && <LogoComponent />}
         </div>
-        <span className="text-[17px] font-semibold text-sx-text-muted tracking-extra-tight">
+        <span className="text-[18px] font-semibold text-sx-text-muted tracking-extra-tight">
           {name}
         </span>
       </div>
@@ -65,7 +53,7 @@ export default function Hero() {
             transition={{ delay: 0.15, duration: 0.4 }}
             className="mb-5"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-sx-border px-3 py-1 text-[11px] font-mono font-medium text-sx-text-muted tracking-snug">
+            <span className="inline-flex items-center gap-2 rounded-full border border-sx-border px-3 py-1 text-[12px] font-mono font-medium text-sx-text-muted tracking-snug">
               <span className="h-1.5 w-1.5 rounded-full bg-sx-accent blink" />
               Now in Open Beta
             </span>
@@ -86,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-[17px] text-sx-text-secondary leading-relaxed mb-8 max-w-[440px]"
+            className="text-[18px] text-sx-text-secondary leading-relaxed mb-8 max-w-[440px]"
           >
             Institutional-grade backtesting for Forex, Crypto &amp; Futures.
             Validate strategies before risking real capital.
@@ -101,13 +89,13 @@ export default function Hero() {
           >
             <a
               href="#start"
-              className="inline-flex items-center h-11 px-7 rounded-full bg-white text-[#0A0A0A] text-[14px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
+              className="inline-flex items-center h-12 px-7 rounded-full bg-white text-[#0A0A0A] text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
             >
               Start for Free
             </a>
             <a
               href="#demo"
-              className="inline-flex items-center gap-2 h-11 px-7 rounded-full border border-sx-border-light text-sx-text text-[14px] font-medium tracking-extra-tight transition-colors duration-200 hover:border-sx-text-muted"
+              className="inline-flex items-center gap-2 h-12 px-7 rounded-full border border-sx-border-light text-sx-text text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:border-sx-text-muted"
             >
               Watch Demo
             </a>
@@ -118,7 +106,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.75, duration: 0.5 }}
-            className="flex items-center gap-2 text-[12px] font-mono text-sx-text-dim"
+            className="flex items-center gap-2 text-[13px] font-mono text-sx-text-dim"
           >
             {trustStats.map((stat, i) => (
               <span key={stat} className="flex items-center gap-2">
@@ -132,6 +120,7 @@ export default function Hero() {
 
       {/* Social proof marquee */}
       <motion.div
+        aria-hidden="true"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.5 }}

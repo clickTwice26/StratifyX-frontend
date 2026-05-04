@@ -13,6 +13,20 @@ export default function MarqueeTicker({
   speed = 30,
   className = "",
 }: MarqueeTickerProps) {
+  // Respect reduced motion preference
+  if (typeof window !== "undefined") {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      return (
+        <div className={`flex gap-8 overflow-hidden ${className}`}>
+          {children.slice(0, children.length / 2)}
+        </div>
+      );
+    }
+  }
+
   return (
     <div className={`relative overflow-hidden edge-fade ${className}`}>
       <motion.div

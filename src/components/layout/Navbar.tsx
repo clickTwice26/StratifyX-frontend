@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, BarChart3 } from "lucide-react";
 
@@ -21,6 +21,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen]);
+
   return (
     <motion.header
       initial={{ y: -10, opacity: 0 }}
@@ -37,7 +47,7 @@ export default function Navbar() {
           {/* Logo — left */}
           <a href="/" className="flex items-center gap-3 mr-14 flex-shrink-0 -ml-1">
             <BarChart3 className="h-7 w-7 text-sx-accent" />
-            <span className="text-[22px] font-bold tracking-extra-tight text-sx-text">
+            <span className="text-[24px] font-bold tracking-extra-tight text-sx-text">
               StratifyX
             </span>
           </a>
@@ -48,7 +58,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3.5 py-1.5 text-[16px] font-medium text-sx-text-muted transition-colors duration-200 hover:text-sx-text rounded-md"
+                className="px-3.5 py-1.5 text-[17px] font-medium text-sx-text-muted transition-colors duration-200 hover:text-sx-text rounded-md"
               >
                 {link.label}
               </a>
@@ -59,13 +69,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3 ml-auto">
             <a
               href="#signin"
-              className="text-[16px] font-medium text-sx-text-muted transition-colors duration-200 hover:text-sx-text"
+              className="text-[17px] font-medium text-sx-text-muted transition-colors duration-200 hover:text-sx-text"
             >
               Sign In
             </a>
             <a
               href="#start"
-              className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-white text-[#0A0A0A] text-[16px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
+              className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-white text-[#0A0A0A] text-[17px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
             >
               Sign Up
             </a>
@@ -98,20 +108,20 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-2.5 text-[14px] text-sx-text-muted hover:text-sx-text transition-colors"
+                  className="block py-2.5 text-[15px] text-sx-text-muted hover:text-sx-text transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href="#signin"
-                className="block py-2.5 text-[14px] text-sx-text-muted hover:text-sx-text transition-colors"
+                className="block py-2.5 text-[15px] text-sx-text-muted hover:text-sx-text transition-colors"
               >
                 Sign In
               </a>
               <a
                 href="#start"
-                className="mt-3 block w-full rounded-full bg-white py-2.5 text-center text-[13px] font-medium text-[#0A0A0A]"
+                className="mt-3 block w-full rounded-full bg-white py-2.5 text-center text-[14px] font-medium text-[#0A0A0A]"
               >
                 Sign Up
               </a>

@@ -70,6 +70,13 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
   useEffect(() => {
     if (!inView) return;
 
+    // Skip animation if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setDrawProgress(1);
+      return;
+    }
+
     let start: number;
     const duration = 2000;
 
@@ -95,12 +102,12 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
       >
         <defs>
           <linearGradient id="equity-gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#00FF9D" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#00FF9D" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--sx-accent)" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="var(--sx-accent)" stopOpacity="0" />
           </linearGradient>
           <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#00FF9D" />
-            <stop offset="100%" stopColor="#00D4FF" />
+            <stop offset="0%" stopColor="var(--sx-accent)" />
+            <stop offset="100%" stopColor="var(--sx-accent)" stopOpacity="0.7" />
           </linearGradient>
         </defs>
 
@@ -112,7 +119,7 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
             y1={height * pct}
             x2={width - padding.right}
             y2={height * pct}
-            stroke="#1E1E2E"
+            stroke="var(--sx-border)"
             strokeWidth="0.5"
             strokeDasharray="4 4"
           />
@@ -145,16 +152,16 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
                 cx={scaleX(marker.x)}
                 cy={scaleY(marker.y)}
                 r="4"
-                fill={marker.type === "buy" ? "#00FF9D" : "#FF3B5C"}
+                fill={marker.type === "buy" ? "var(--sx-accent)" : "var(--sx-red)"}
                 opacity="0.9"
               />
               <text
                 x={scaleX(marker.x)}
                 y={scaleY(marker.y) + (marker.type === "buy" ? 14 : -8)}
                 textAnchor="middle"
-                fill={marker.type === "buy" ? "#00FF9D" : "#FF3B5C"}
+                fill={marker.type === "buy" ? "var(--sx-accent)" : "var(--sx-red)"}
                 fontSize="8"
-                fontFamily="JetBrains Mono, monospace"
+                fontFamily="var(--font-mono)"
               >
                 {marker.type === "buy" ? "▲" : "▼"}
               </text>
@@ -168,8 +175,7 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
             cx={scaleX(data[data.length - 1].x)}
             cy={scaleY(data[data.length - 1].y)}
             r="5"
-            fill="#00D4FF"
-            className="blink-cyan"
+            fill="var(--sx-accent)"
           >
             <animate
               attributeName="r"

@@ -7,7 +7,7 @@ export default function SocialProof() {
   const items = brokerLogos.map((logo) => (
     <div
       key={logo}
-      className="flex items-center gap-2 px-5 text-[13px] font-medium text-sx-text-dim whitespace-nowrap"
+      className="flex items-center gap-2 px-5 text-[14px] font-medium text-sx-text-dim whitespace-nowrap"
     >
       <div className="h-5 w-5 rounded bg-sx-surface border border-sx-border flex items-center justify-center text-[9px] font-mono text-sx-text-muted">
         {logo.charAt(0)}

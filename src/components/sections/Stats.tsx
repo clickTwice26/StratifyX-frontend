@@ -34,7 +34,7 @@ export default function Stats() {
                   duration={2}
                 />
               </div>
-              <p className="text-[12px] text-sx-text-dim font-mono uppercase tracking-wider">
+              <p className="text-[13px] text-sx-text-dim font-mono uppercase tracking-wider">
                 {stat.label}
               </p>
             </motion.div>
