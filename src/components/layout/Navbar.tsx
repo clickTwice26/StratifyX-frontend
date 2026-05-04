@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, BarChart3 } from "lucide-react";
@@ -45,12 +46,12 @@ export default function Navbar() {
       <nav className="mx-auto max-w-[1440px] px-5 lg:px-6">
         <div className="flex h-14 items-center">
           {/* Logo — left */}
-          <a href="/" className="flex items-center gap-3 mr-14 flex-shrink-0 -ml-1">
+          <Link href="/" className="flex items-center gap-3 mr-14 flex-shrink-0 -ml-1">
             <BarChart3 className="h-7 w-7 text-sx-accent" />
             <span className="text-[24px] font-bold tracking-extra-tight text-sx-text">
               StratifyX
             </span>
-          </a>
+          </Link>
 
           {/* Nav links — center */}
           <div className="hidden md:flex items-center gap-1 flex-1">

@@ -3,14 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "@/hooks/useInView";
 
+// Seeded PRNG (mulberry32) — produces identical sequences on server and client
+// to avoid React 19 hydration mismatches caused by Math.random().
+function createSeededRandom(seed: number) {
+  return () => {
+    seed |= 0;
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 // Generate a realistic-looking equity curve
 function generateEquityCurveData(points: number = 80) {
+  const random = createSeededRandom(42);
   const data: { x: number; y: number }[] = [];
   let equity = 10000;
 
   for (let i = 0; i < points; i++) {
     const trend = Math.sin(i / 10) * 0.003 + 0.0015;
-    const noise = (Math.random() - 0.48) * 200;
+    const noise = (random() - 0.48) * 200;
     equity = equity * (1 + trend) + noise;
     data.push({ x: i, y: equity });
   }
@@ -20,12 +33,13 @@ function generateEquityCurveData(points: number = 80) {
 
 // Generate buy/sell markers
 function generateTradeMarkers(data: { x: number; y: number }[]) {
+  const random = createSeededRandom(137);
   const markers: { x: number; y: number; type: "buy" | "sell" }[] = [];
-  for (let i = 5; i < data.length - 5; i += Math.floor(Math.random() * 8) + 5) {
+  for (let i = 5; i < data.length - 5; i += Math.floor(random() * 8) + 5) {
     markers.push({
       x: data[i].x,
       y: data[i].y,
-      type: Math.random() > 0.5 ? "buy" : "sell",
+      type: random() > 0.5 ? "buy" : "sell",
     });
   }
   return markers;
@@ -38,10 +52,17 @@ interface EquityCurveProps {
 export default function EquityCurve({ className = "" }: EquityCurveProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { threshold: 0.3 });
-  const [drawProgress, setDrawProgress] = useState(0);
 
-  const data = useRef(generateEquityCurveData()).current;
-  const markers = useRef(generateTradeMarkers(data)).current;
+  // Use useState lazy initializer instead of useRef to avoid accessing refs during render
+  const [data] = useState(generateEquityCurveData);
+  const [markers] = useState(() => generateTradeMarkers(data));
+
+  // Initialize drawProgress to 1 if user prefers reduced motion (avoids setState in effect)
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const [drawProgress, setDrawProgress] = useState(prefersReducedMotion ? 1 : 0);
+  const hasAnimated = useRef(false);
 
   const width = 500;
   const height = 200;
@@ -66,16 +87,10 @@ export default function EquityCurve({ className = "" }: EquityCurveProps) {
     pathD +
     ` L ${scaleX(data[data.length - 1].x)} ${height - padding.bottom} L ${scaleX(0)} ${height - padding.bottom} Z`;
 
-  // Animate draw on enter
+  // Animate draw on enter (reduced-motion already handled in useState initializer)
   useEffect(() => {
-    if (!inView) return;
-
-    // Skip animation if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      setDrawProgress(1);
-      return;
-    }
+    if (!inView || hasAnimated.current) return;
+    hasAnimated.current = true;
 
     let start: number;
     const duration = 2000;

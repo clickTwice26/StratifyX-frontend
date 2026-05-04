@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BarChart3 } from "lucide-react";
 
 const footerColumns = [
@@ -54,12 +55,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <BarChart3 className="h-5 w-5 text-sx-accent" />
               <span className="text-[16px] font-semibold tracking-extra-tight">
                 StratifyX
               </span>
-            </a>
+            </Link>
             <p className="text-[14px] text-sx-text-muted leading-relaxed max-w-[260px] mb-5">
               Institutional-grade backtesting for Forex, Crypto &amp; Futures.
             </p>
