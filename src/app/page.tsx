@@ -1,14 +1,25 @@
+import Hero from "@/components/sections/Hero";
+import Features from "@/components/sections/Features";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Stats from "@/components/sections/Stats";
+import DemoPreview from "@/components/sections/DemoPreview";
+import Testimonials from "@/components/sections/Testimonials";
+import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-center font-mono text-sm">
-        <h1 className="text-4xl font-bold text-center mb-4">
-          Welcome to StratifyX
-        </h1>
-        <p className="text-center text-muted-foreground">
-          Professional Next.js + FastAPI Platform
-        </p>
-      </div>
-    </main>
+    <>
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <Stats />
+      <DemoPreview />
+      <Testimonials />
+      <Pricing />
+      <FAQ />
+      <FinalCTA />
+    </>
   );
 }

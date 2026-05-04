@@ -1,0 +1,55 @@
+/* StratifyX Design Tokens — Neon.com / Dovetail.com inspired */
+
+:root {
+  /* ─── Backgrounds (near-black, no purple tint) ─── */
+  --sx-bg:            #0A0A0A;
+  --sx-surface:       #111111;
+  --sx-card:          #141414;
+  --sx-card-hover:    #1A1A1A;
+  --sx-border:        #1E1E1E;
+  --sx-border-light:  #2A2A2A;
+  --sx-border-hover:  #333333;
+
+  /* ─── Accent — single muted green (like Neon) ─── */
+  --sx-accent:        #2DD4A8;
+  --sx-accent-dim:    #1A8A6A;
+  --sx-accent-subtle: rgba(45, 212, 168, 0.08);
+
+  /* ─── Secondary accents (used very sparingly) ─── */
+  --sx-white:         #FFFFFF;
+  --sx-red:           #EB5246;
+  --sx-amber:         #F5A623;
+
+  /* ─── Text — warm grays, not blue-tinted ─── */
+  --sx-text:          #EDEDEF;
+  --sx-text-secondary:#94949E;
+  --sx-text-muted:    #63636E;
+  --sx-text-dim:      #44444E;
+
+  /* ─── Typography ─── */
+  --font-heading:     'Inter', -apple-system, system-ui, sans-serif;
+  --font-body:        'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono:        'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* ─── Spacing ─── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  96px;
+  --space-5xl:  128px;
+
+  /* ─── Radius — 8px standard (like both sites) ─── */
+  --radius-sm:  6px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-pill: 9999px;
+
+  /* ─── Transitions ─── */
+  --ease-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --duration:   200ms;
+}

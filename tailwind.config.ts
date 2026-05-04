@@ -1,62 +1,86 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        sx: {
+          bg:             '#0A0A0A',
+          surface:        '#111111',
+          card:           '#141414',
+          'card-hover':   '#1A1A1A',
+          border:         '#1E1E1E',
+          'border-light': '#2A2A2A',
+          'border-hover': '#333333',
+          accent:         '#2DD4A8',
+          'accent-dim':   '#1A8A6A',
+          'accent-subtle':'rgba(45, 212, 168, 0.08)',
+          white:          '#FFFFFF',
+          red:            '#EB5246',
+          amber:          '#F5A623',
+          text:           '#EDEDEF',
+          'text-secondary':'#94949E',
+          'text-muted':   '#63636E',
+          'text-dim':     '#44444E',
+        },
+        border: "var(--sx-border)",
+        input: "var(--sx-border)",
+        ring: "var(--sx-accent)",
+        background: "var(--sx-bg)",
+        foreground: "var(--sx-text)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--sx-accent)",
+          foreground: "#0A0A0A",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--sx-surface)",
+          foreground: "var(--sx-text)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "var(--sx-surface)",
+          foreground: "var(--sx-text-muted)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--sx-accent)",
+          foreground: "#0A0A0A",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--sx-card)",
+          foreground: "var(--sx-text)",
         },
       },
+      fontFamily: {
+        heading: ['Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        body:    ['Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        mono:    ['JetBrains Mono', 'SF Mono', 'Consolas', 'monospace'],
+      },
+      fontSize: {
+        'hero':  ['72px', { lineHeight: '1.05', letterSpacing: '-0.035em', fontWeight: '600' }],
+        'h2':    ['48px', { lineHeight: '1.1',  letterSpacing: '-0.03em',  fontWeight: '600' }],
+        'h3':    ['28px', { lineHeight: '1.2',  letterSpacing: '-0.02em',  fontWeight: '500' }],
+        'stat':  ['56px', { lineHeight: '1',    letterSpacing: '-0.03em',  fontWeight: '600' }],
+      },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "6px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+        pill: "9999px",
       },
       keyframes: {
         "accordion-down": {
@@ -67,10 +91,19 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+      },
+      letterSpacing: {
+        'extra-tight': '-0.03em',
+        'snug': '-0.01em',
       },
     },
   },
