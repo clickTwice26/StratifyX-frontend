@@ -46,7 +46,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-[1440px] px-5 lg:px-6">
         <div className="flex h-14 items-center">
           {/* Logo — left */}
-          <Link href="/" className="flex items-center gap-3 mr-14 flex-shrink-0 -ml-1">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 mr-auto md:mr-14 flex-shrink-0 -ml-1">
             <BarChart3 className="h-7 w-7 text-sx-accent" />
             <span className="text-[24px] font-bold tracking-extra-tight text-sx-text">
               StratifyX

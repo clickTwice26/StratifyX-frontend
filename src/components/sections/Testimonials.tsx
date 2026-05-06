@@ -18,7 +18,7 @@ export default function Testimonials() {
           <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Testimonials
           </span>
-          <h2 className="text-h2 text-sx-text">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text leading-[1.1] tracking-[-0.03em] font-semibold">
             Trusted by serious traders
           </h2>
         </motion.div>

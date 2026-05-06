@@ -22,7 +22,7 @@ export default function Pricing() {
           <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Pricing
           </span>
-          <h2 className="text-h2 text-sx-text mb-3">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text mb-3 leading-[1.1] tracking-[-0.03em] font-semibold">
             Simple, transparent pricing
           </h2>
           <p className="text-[16px] text-sx-text-muted max-w-[400px] mx-auto mb-8">
@@ -88,7 +88,7 @@ export default function Pricing() {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -6, opacity: 0 }}
                         transition={{ duration: 0.15 }}
-                        className="text-[40px] font-semibold text-sx-text tracking-extra-tight"
+                        className="text-[32px] sm:text-[36px] md:text-[40px] font-semibold text-sx-text tracking-extra-tight"
                       >
                         ${annual ? tier.price.annual : tier.price.monthly}
                       </motion.span>
@@ -96,7 +96,7 @@ export default function Pricing() {
                     <span className="text-[14px] text-sx-text-muted">/mo</span>
                   </div>
                 ) : (
-                  <div className="text-[40px] font-semibold text-sx-text tracking-extra-tight">
+                  <div className="text-[32px] sm:text-[36px] md:text-[40px] font-semibold text-sx-text tracking-extra-tight">
                     Custom
                   </div>
                 )}

@@ -25,7 +25,7 @@ export default function Stats() {
               transition={{ delay: i * 0.06, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               className="text-center lg:text-left"
             >
-              <div className="text-stat text-sx-text mb-1">
+              <div className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-stat text-sx-text mb-1 leading-[1] tracking-[-0.025em] lg:tracking-[-0.03em] font-semibold">
                 <AnimatedCounter
                   end={stat.value}
                   suffix={stat.suffix}

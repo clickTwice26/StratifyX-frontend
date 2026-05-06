@@ -28,7 +28,7 @@ export default function Features() {
           <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             Features
           </span>
-          <h2 className="text-h2 text-sx-text mb-3">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text mb-3 leading-[1.1] tracking-[-0.03em] font-semibold">
             Everything you need to test smarter
           </h2>
           <p className="text-[16px] text-sx-text-muted max-w-[480px]">

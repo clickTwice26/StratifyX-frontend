@@ -52,7 +52,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-sx-border">
       <div className="mx-auto max-w-[1440px] px-5 lg:px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-14 pt-6 border-t border-sx-border flex items-center justify-between">
+        <div className="mt-14 pt-6 border-t border-sx-border flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[12px] text-sx-text-dim font-mono">
             &copy; {new Date().getFullYear()} StratifyX
           </p>

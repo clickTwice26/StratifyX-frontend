@@ -18,7 +18,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-          className="text-h2 text-sx-text mb-3"
+          className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text mb-3 leading-[1.1] tracking-[-0.03em] font-semibold"
         >
           Your edge starts here.
         </motion.h2>
@@ -53,7 +53,7 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="flex items-center justify-center gap-5 mt-8 text-[12px] text-sx-text-dim font-mono"
+          className="flex flex-wrap items-center justify-center gap-3 md:gap-5 mt-8 text-[11px] md:text-[12px] text-sx-text-dim font-mono"
         >
           {badges.map((b) => (
             <div key={b.label} className="flex items-center gap-1.5">

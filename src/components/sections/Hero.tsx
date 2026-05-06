@@ -44,8 +44,8 @@ export default function Hero() {
       </div>
 
       {/* Content — left-aligned */}
-      <div className="relative z-10 mx-auto max-w-[1440px] px-5 lg:px-6 w-full pt-28 pb-10 flex-1 flex items-center">
-        <div className="max-w-[640px]">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-5 lg:px-6 w-full pt-20 md:pt-28 pb-10 flex-1 flex items-center">
+        <div className="max-w-full lg:max-w-[640px]">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -64,7 +64,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-            className="text-hero text-sx-text mb-4"
+            className="text-[36px] sm:text-[44px] md:text-[56px] lg:text-hero text-sx-text mb-4 leading-[1.08] tracking-[-0.03em] font-semibold"
           >
             Test Before<br />You Trade.
           </motion.h1>
@@ -74,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-[18px] text-sx-text-secondary leading-relaxed mb-8 max-w-[440px]"
+            className="text-[16px] md:text-[18px] text-sx-text-secondary leading-relaxed mb-6 md:mb-8 max-w-full md:max-w-[440px]"
           >
             Institutional-grade backtesting for Forex, Crypto &amp; Futures.
             Validate strategies before risking real capital.
@@ -85,17 +85,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.4 }}
-            className="flex items-center gap-3 mb-8"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6 md:mb-8"
           >
             <a
               href="#start"
-              className="inline-flex items-center h-12 px-7 rounded-full bg-white text-[#0A0A0A] text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
+              className="inline-flex items-center h-11 md:h-12 px-6 md:px-7 rounded-full bg-white text-[#0A0A0A] text-[14px] md:text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:bg-[#E0E0E0]"
             >
               Start for Free
             </a>
             <a
               href="#demo"
-              className="inline-flex items-center gap-2 h-12 px-7 rounded-full border border-sx-border-light text-sx-text text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:border-sx-text-muted"
+              className="inline-flex items-center gap-2 h-11 md:h-12 px-6 md:px-7 rounded-full border border-sx-border-light text-sx-text text-[14px] md:text-[15px] font-medium tracking-extra-tight transition-colors duration-200 hover:border-sx-text-muted"
             >
               Watch Demo
             </a>
@@ -106,7 +106,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.75, duration: 0.5 }}
-            className="flex items-center gap-2 text-[13px] font-mono text-sx-text-dim"
+            className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] md:text-[13px] font-mono text-sx-text-dim"
           >
             {trustStats.map((stat, i) => (
               <span key={stat} className="flex items-center gap-2">

@@ -45,7 +45,7 @@ export default function HowItWorks() {
           <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             How It Works
           </span>
-          <h2 className="text-h2 text-sx-text">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text leading-[1.1] tracking-[-0.03em] font-semibold">
             From data to edge in 4 steps
           </h2>
         </motion.div>
@@ -62,7 +62,7 @@ export default function HowItWorks() {
               className="relative bg-sx-bg p-7 group hover:bg-sx-surface transition-colors duration-200"
             >
               {/* Ghost number */}
-              <div className="absolute top-4 right-5 font-mono text-[62px] font-bold text-sx-border leading-none select-none">
+              <div className="absolute top-4 right-5 font-mono text-[40px] md:text-[52px] lg:text-[62px] font-bold text-sx-border leading-none select-none">
                 {step.num}
               </div>
 

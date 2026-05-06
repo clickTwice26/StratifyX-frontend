@@ -28,7 +28,7 @@ export default function DemoPreview() {
           <span className="inline-block text-[12px] font-mono font-medium text-sx-accent uppercase tracking-wider mb-3">
             See It In Action
           </span>
-          <h2 className="text-h2 text-sx-text">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-h2 text-sx-text leading-[1.1] tracking-[-0.03em] font-semibold">
             Your backtesting command center
           </h2>
         </motion.div>
@@ -41,7 +41,7 @@ export default function DemoPreview() {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="rounded-lg border border-sx-border bg-sx-card overflow-hidden max-w-[1100px] mx-auto"
         >
-          <div className="grid lg:grid-cols-[240px_1fr]">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr]">
             {/* Left panel */}
             <div className="border-r border-sx-border p-5 space-y-5 hidden lg:block">
               <div>
@@ -107,14 +107,15 @@ export default function DemoPreview() {
                   <span>Max DD: <span className="text-sx-red">-8.2%</span></span>
                 </div>
               </div>
-              <div className="p-4">
+              <div className="p-3 md:p-4">
                 <EquityCurve className="w-full h-44" />
               </div>
               <div className="border-t border-sx-border">
                 <div className="px-5 py-2 text-[11px] font-mono text-sx-text-dim uppercase tracking-wider border-b border-sx-border/50">
                   Recent Trades
                 </div>
-                <table className="w-full">
+                <div className="overflow-x-auto">
+                <table className="w-full min-w-[400px]">
                   <thead className="sr-only">
                     <tr>
                       <th scope="col">ID</th>
@@ -141,6 +142,7 @@ export default function DemoPreview() {
                     ))}
                   </tbody>
                 </table>
+                </div>
               </div>
             </div>
           </div>
